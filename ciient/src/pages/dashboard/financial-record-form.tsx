@@ -1,4 +1,4 @@
-import { useUser } from "@clerk/nextjs"
+//import { useUser } from "@clerk/nextjs"
 import { useState } from "react"
 
 export function FinancialRecordList(){
@@ -6,18 +6,18 @@ export function FinancialRecordList(){
     const [amount,setAmount]=useState<string>("")
     const [category,setCategoryy]=useState<string>("")
     const [paymentMethod,setPay]=useState<string>("")
-    const {user}=useUser()
+//    const {user}=useUser()
 
     function handleSubmit(e:React.FocusEvent<HTMLFormElement>){
         e.preventDefault()
-        const newRecord={
-        userId:user?.id,
-        date:new Date(),
-        description:description,
-        amount:parseFloat(amount),
-        category:category,
-        paymentMethod:paymentMethod
-    }
+    //     const newRecord={
+    //     userId:user?.id,
+    //     date:new Date(),
+    //     description:description,
+    //     amount:parseFloat(amount),
+    //     category:category,
+    //     paymentMethod:paymentMethod
+    // }
     setDescription("")
     setAmount("")
     setPay("")
@@ -32,6 +32,15 @@ export function FinancialRecordList(){
                     className="input" value={description} onChange={(e)=>setDescription(e.target.value)}
                     />
                 </div>
+
+                <div className="form-field">
+                    <label>Amount</label>
+                    <input type="number" required 
+                    className="input" value={amount}
+                    onChange={(e)=>setAmount(e.target.value)}
+                    />
+                </div>
+
 
                 <div className="form-field">
                     <label >Category</label>
