@@ -1,5 +1,5 @@
 info.txt
-.env
+*.env
 # Logs
 logs
 *.log
